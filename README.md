@@ -14,17 +14,11 @@
 
 3. 配置
   `options: {
-
     workingDir: 'test/fixtures',
-
     componentCSS: 'css/components.css'
-
   },
-
   files: {
-
     'dest/index.html': 'test/fixtures/testing.html',
-    
   }`
 
   其中，workingDir是源码路径，componentsCSS是生成的组件css文件位置
