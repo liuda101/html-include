@@ -1,0 +1,22 @@
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{margin:0;padding:0;}
+fieldset,img{border:none;}
+address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+ul,ol{list-style:none;}
+input{padding-top:0;padding-bottom:0;}
+input::-moz-focus-inner{border:none;padding:0;}
+select,input{vertical-align:middle;}
+select,input,textarea{font-size:12px;margin:0;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none;}
+table{border-collapse:collapse;}
+body{background:#fff;font:12px/20px "Arial","Microsoft YaHei","微软雅黑","SimSun","宋体";}
+a{color:#000; text-decoration:none;}
+a:hover{color:#f00; text-decoration:underline;}
+a:visited{color:#800080;}
+a:focus{outline:none;}
+.clearfix{zoom:1;}
+.clearfix:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+h1{font-size:50px;}
+.left{width:670px; float:left;}
+.right{width:300px; float:right;}
+.footer{text-align: center;}
