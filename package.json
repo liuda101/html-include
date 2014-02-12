@@ -2,22 +2,22 @@
   "name": "grunt-html-include",
   "description": "The best Grunt plugin ever.",
   "version": "0.1.0",
-  "homepage": "https://github.com/qifeng4/html-include",
+  "homepage": "https://github.com/liuda101/html-include",
   "author": {
     "name": "Liu Qifeng",
     "email": "liu.da101@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/qifeng4/html-include.git"
+    "url": "git://github.com/liuda101/html-include.git"
   },
   "bugs": {
-    "url": "https://github.com/qifeng4/html-include/issues"
+    "url": "https://github.com/liuda101/html-include/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/qifeng4/html-include/blob/master/LICENSE-MIT"
+      "url": "https://github.com/liuda101/html-include/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
