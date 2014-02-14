@@ -24,22 +24,22 @@
 
 5. Configuration
 
-    `options: {
+    `options: {`
 
-      workingDir: 'src',
+      `workingDir: 'src',`
 
-      componentCSS: 'css/components.css'
+      `componentCSS: 'css/components.css'`
 
-    },
+    `},`
 
-    files: {
+    `files: {`
 
-      'dest/index.html': 'src/index.html'
+      `'dest/index.html': 'src/index.html'`
 
-    }`
+    `}`
 
     `workingDir`: the html source directory
 
     `componentCSS`: the file of components.css
-    
+
     `files`: the files to 'html-include'
