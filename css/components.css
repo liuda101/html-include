@@ -16,7 +16,8 @@ a:visited{color:#800080;}
 a:focus{outline:none;}
 .clearfix{zoom:1;}
 .clearfix:after{clear:both;content:".";display:block;height:0;visibility:hidden;}
+.wrapper{width:1000px; margin:0 auto;}
 h1{font-size:50px;}
-.left{width:670px; float:left;}
-.right{width:300px; float:right;}
+.column_670_300 .left{width:670px; float:left;}
+.column_670_300 .right{width:300px; float:right;}
 .footer{text-align: center;}

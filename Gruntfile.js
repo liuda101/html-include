@@ -32,11 +32,11 @@ module.exports = function(grunt) {
     html_include: {
       default_options: {
         options: {
-          workingDir: 'test/fixtures',
+          workingDir: 'src',
           componentCSS: 'css/components.css'
         },
         files: {
-          'dest/index.html': 'test/fixtures/testing.html',
+          'dest/index.html': 'src/index.html',
         },
       }
     },

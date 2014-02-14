@@ -20,11 +20,6 @@ module.exports = function(grunt) {
       componentCSS: 'css/components.css'
     });
 
-    grunt.log.debug('Options', options);
-
-    // Variables available in ALL files
-    var globalVars = options.globals;
-
     var includeRegExp = new RegExp('@@include\\(\\s*["\'](.*?)["\'](,\\s*({[\\s\\S]*?})){0,1}\\s*\\)');
 
     function replace(contents, localVars){
