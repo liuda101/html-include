@@ -16,8 +16,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('html_include', 'The best Grunt plugin ever.', function() {
 
     var options = this.options({
-      workingDir: 'src',
-      componentCSS: 'css/components.css'
+      workingDir: 'src'
     });
 
     var includeRegExp = new RegExp('@@include\\(\\s*["\'](.*?)["\'](,\\s*({[\\s\\S]*?})){0,1}\\s*\\)');
@@ -37,7 +36,7 @@ module.exports = function(grunt) {
       return contents;
     }
 
-    function include(contents){
+    function include(contents, isRecursion){
       var matches = includeRegExp.exec(contents);
 
       function createReplaceFn (replacement) {
@@ -57,7 +56,9 @@ module.exports = function(grunt) {
         if(!grunt.file.isFile(realPath)){
           realPath = path.resolve('components/' + includePath) + '.html';
           try{
-            componentCSSContents.push(grunt.file.read(path.resolve('components/' + includePath) + '.css'));
+            if(!isRecursion){
+              componentCSSContents.push(grunt.file.read(path.resolve('components/' + includePath) + '.css'));
+            }
           }catch(e){
           }
         }
@@ -65,7 +66,7 @@ module.exports = function(grunt) {
         var includeContents = grunt.file.read(realPath);
         includeContents = replace(includeContents, localVars);
 
-        includeContents = include(includeContents, path.dirname(realPath));
+        includeContents = include(includeContents, true);
 
         contents = contents.replace(match, createReplaceFn(includeContents));
 
@@ -87,12 +88,12 @@ module.exports = function(grunt) {
 
         var contents = grunt.file.read(src);
 
-        contents = include(contents);
+        contents = include(contents, false);
         
         var destfile = f.dest + src.split(options.workingDir)[1];
 
         grunt.file.write(destfile, contents);
-        grunt.file.write(options.componentCSS, componentCSSContents.join('\n'));
+        grunt.file.write('css/' + src.split(options.workingDir)[1].split('.html')[0] + '.css', componentCSSContents.join('\n'));
       });
 
     });

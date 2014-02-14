@@ -8,7 +8,7 @@
 
     If `./filename.html` doesn't exist, it will search for it in the directory of `/components`.
 
-    Besides, the `/components/filename.css` will be writeen to `/css/components.css`. So that,
+    Besides, the `/components/filename.css` will be writeen to `/css/filename.css`. So that,
 
     you should put your common HTML components and CSS in the directory of `/components`
 
