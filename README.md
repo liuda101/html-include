@@ -34,9 +34,7 @@
 
     `files: {`
 
-      `'dest': 'src/index.html'`
-      
-      `'dest': 'src/*.html'`
+      `'dest': ['src/index.html', 'src/*.html']`
 
     `}`
 
