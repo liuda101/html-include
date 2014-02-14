@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       return contents;
     }
 
-    function include(contents, isRecursion){
+    function include(contents, cssFileKey, isRecursion){
       var matches = includeRegExp.exec(contents);
 
       function createReplaceFn (replacement) {
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
           realPath = path.resolve('components/' + includePath) + '.html';
           try{
             if(!isRecursion){
-              componentCSSContents.push(grunt.file.read(path.resolve('components/' + includePath) + '.css'));
+              componentCSSContents[cssFileKey].push(grunt.file.read(path.resolve('components/' + includePath) + '.css'));
             }
           }catch(e){
           }
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
         var includeContents = grunt.file.read(realPath);
         includeContents = replace(includeContents, localVars);
 
-        includeContents = include(includeContents, true);
+        includeContents = include(includeContents, cssFileKey, true);
 
         contents = contents.replace(match, createReplaceFn(includeContents));
 
@@ -76,24 +76,26 @@ module.exports = function(grunt) {
       return contents;
     }
 
-    var componentCSSContents = [];
+    var componentCSSContents = {};
 
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
-      
+
       f.src.forEach(function(src){
         if(!grunt.file.isFile(src)){
           return;
         }
 
+        componentCSSContents[src] = [];
+
         var contents = grunt.file.read(src);
 
-        contents = include(contents, false);
+        contents = include(contents, src, false);
         
         var destfile = f.dest + src.split(options.workingDir)[1];
 
         grunt.file.write(destfile, contents);
-        grunt.file.write('css/' + src.split(options.workingDir)[1].split('.html')[0] + '.css', componentCSSContents.join('\n'));
+        grunt.file.write('css/' + src.split(options.workingDir)[1].split('.html')[0] + '.components.css', componentCSSContents[src].join('\n'));
       });
 
     });
