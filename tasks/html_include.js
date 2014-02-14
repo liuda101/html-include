@@ -89,7 +89,9 @@ module.exports = function(grunt) {
 
         contents = include(contents);
         
-        grunt.file.write(f.dest, contents);
+        var destfile = f.dest + src.split(options.workingDir)[1];
+
+        grunt.file.write(destfile, contents);
         grunt.file.write(options.componentCSS, componentCSSContents.join('\n'));
       });
 
