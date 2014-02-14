@@ -1,7 +1,7 @@
 {
   "name": "grunt-html-include",
   "description": "Support module development for html",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/liuda101/html-include",
   "author": {
     "name": "Liu Qifeng",
