@@ -36,6 +36,10 @@
     "grunt": "~0.4.2"
   },
   "keywords": [
-    "gruntplugin, html, include, module development"
+    "gruntplugin",
+    "html",
+    "include",
+    "module",
+    "development"
   ]
 }
